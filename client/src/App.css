@@ -1,0 +1,117 @@
+
+
+
+#root {
+  /* max-width: 1280px; */
+  margin: 0 ;
+  padding: 0;
+  /* text-align: center; */
+  
+}
+body {
+  font-family: 'Comfortaa', display;
+  /* overflow: hidden; */
+  /* overflow-y: scroll;
+  scrollbar-width: 2px;
+  scrollbar-color: transparent transparent;  */
+
+}
+.glassDesign{
+  background: rgba(4, 9, 68, 0.793);
+box-shadow: 0 8px 32px 0 rgba(26, 33, 137, 0.37);
+backdrop-filter: blur( 6px );
+-webkit-backdrop-filter: blur( 10px );
+border-radius: 10px;
+}
+.Comfortaa{
+  font-family: 'Comfortaa', display;
+}
+.avatar-menu{
+  top: 95%;
+  right:10%;
+  z-index: 1;
+  animation: animate 1s ease ;
+}
+.avatar-menu::before{
+  content: "";
+  position: absolute;
+  right: 0;
+  top: -13px;
+  /* background-color: #B91C1C; */
+  z-index: 1;
+
+  width: 0; 
+  height: 0; 
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  
+  border-bottom: 20px solid #CBD5E1;
+}
+.quill{
+  padding-top: 10px !important;
+  box-shadow: 0 0 10px  rgba(253, 243, 253, 0.643);
+  /* overflow: hidden; */
+}
+.ql-toolbar{
+  display: flex;
+  justify-content: center;
+  border: none !important;
+  border-bottom: 2px solid rgba(128, 128, 128, 0.735) !important;
+  
+}
+.ql-container{
+  border: none !important;
+  /* background-color: red; */
+  height: 92% !important;
+  color:black;
+  font-size:18px !important;
+  /* border: 2px solid red !important;   */
+  scrollbar-color: rgba(128, 128, 128, 0.716) transparent;
+  padding-top: 20px ; 
+
+
+}
+
+.avatarbox{
+  scrollbar-width: 2px;
+  scrollbar-color: rgba(149, 0, 255, 0.577) transparent; 
+}
+
+
+
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
