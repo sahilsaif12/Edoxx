@@ -10,7 +10,7 @@ var server = http.createServer(app);
 const port=process.env.PORT || 8000
 const io=new Server(server,{
     cors: {
-        origin: "https://edox.vercel.app/",
+        origin: process.env.CLIENT,
         methods: ['GET', 'POST'],
       },
 })
