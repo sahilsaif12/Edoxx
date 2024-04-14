@@ -61,19 +61,25 @@ function TextEditor({ socket, setsocket }) {
             if (range) {
                 if (range.length == 0) {
                     socket?.emit('cursor-move', { roomId, data: userData, cursorPos: range });
+                    socket?.emit('text-change', { roomId, delta: delta })
+                    settextSave(false)
                 } else {
+                    const currentContents = quillRef.current.getEditor()?.getContents(); // Get the current state of the editor
+                const serializedContent = JSON.stringify(currentContents); // Serialize the state
+                socket?.emit('save-content', { roomId, content: serializedContent });
+                settextSave(true);
                     console.log('User has made a selection');
                 }
             }
+
+            
             // console.log("here text");
-            socket?.emit('text-change', { roomId, delta: delta })
-            settextSave(false)
         }
 
         const handleTextSelection = (range) => {
             console.log("here select");
             socket?.emit('cursor-selection', { roomId, data: userData, cursorPos: range })
-
+            console.log("bold");
         }
 
         socket?.on('remote-cursor-move', ({ data, cursorPos }) => {
