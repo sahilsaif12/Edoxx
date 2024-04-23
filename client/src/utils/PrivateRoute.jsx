@@ -3,7 +3,7 @@ import { Navigate, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Cookies from "js-cookie";
 import AppContext from "../context/AppContext";
-
+import Loader from "./Loader.jsx"
 const PrivateRoute = ({ Component }) => {
 
   const {server}=useContext(AppContext)
@@ -43,7 +43,9 @@ const PrivateRoute = ({ Component }) => {
 
   }, [])
 
-  return validToken && <Component />
+  return (
+    validToken ? <Component /> : <Loader />
+  )
 
   // : <Navigate to="/" />;
 };

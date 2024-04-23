@@ -3,6 +3,7 @@ import { Navigate, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Cookies from "js-cookie";
 import AppContext from "../context/AppContext";
+import Loader from "./Loader";
 
 const SignUpPrivateRoute = ({ Component }) => {
 
@@ -44,7 +45,7 @@ const SignUpPrivateRoute = ({ Component }) => {
 
   }, [])
 
-  return !validToken && <Component />
+  return !validToken ? <Component /> :<Loader/>
 
   // : <Navigate to="/" />;
 };
